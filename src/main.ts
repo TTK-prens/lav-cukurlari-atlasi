@@ -604,6 +604,29 @@ function renderHome() {
     <div class="clay stat warnstat"><b>0</b><span>${Lx('doğrulanmış Mars mağarası', 'confirmed Mars caves')}</span><small>${Lx('hepsi aday', 'all are candidates')}</small></div>
   </section>
 
+  <section class="band" id="sunum">
+    <header class="sec-h"><p class="eyebrow">${Lx('Sunum · Team Milestone', 'Presentation · Team Milestone')}</p><h2 class="display-s">${Lx('30 saniyede proje ve 7 sayfalık sunum', 'The project in 30 seconds, plus a 7-page deck')}</h2></header>
+    <div class="present">
+      <figure class="clay vid">
+        <video controls preload="metadata" playsinline poster="img/arsia7.jpg">
+          <source src="Milestone_LavaPitAtlas_demo.mp4" type="video/mp4">
+          <track kind="subtitles" srclang="en" label="English" src="Milestone_LavaPitAtlas_demo.en.vtt" default>
+        </video>
+        <figcaption>${Lx('Demo videosu · 28,9 sn · İngilizce anlatım ve altyazı', 'Demo video · 28.9 s · English narration and subtitles')}</figcaption>
+      </figure>
+      <div class="glass deck">
+        <h3>${Lx('Sunum (PDF, 7 sayfa)', 'Slide deck (PDF, 7 pages)')}</h3>
+        <p>${Lx('Problem, atlas, Dünya ikizleri, en uygun üs yerleri, maliyet ve sonraki adımlar. Her ekran görüntüsü bu siteden.', 'Problem, atlas, Earth twins, best base sites, cost and next steps. Every screenshot comes from this site.')}</p>
+        <p class="small muted">Talha Küçük · Sedat Has · Masal Kaya · Nil Aydın · Beren Akın · Mehmet Yiğit Karabaş</p>
+        <div class="cta">
+          <a class="btn primary" href="Milestone_LavaPitAtlas_slides.pdf" target="_blank" rel="noopener">${Lx('Sunumu aç', 'Open the deck')}</a>
+          <a class="btn ghost" href="Milestone_LavaPitAtlas_slides.pdf" download>${Lx('PDF indir', 'Download PDF')}</a>
+          <a class="btn ghost" href="Milestone_LavaPitAtlas_demo.mp4" download>${Lx('Videoyu indir', 'Download video')}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="band">
     <header class="sec-h"><p class="eyebrow">${Lx('Amaç', 'Purpose')}</p><h2 class="display-s">${Lx('Neden yüzey değil de çukur?', 'Why a pit, not the surface?')}</h2></header>
     <div class="grid3">

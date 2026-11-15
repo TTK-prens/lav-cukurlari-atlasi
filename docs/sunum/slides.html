@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lava Pit Atlas — Team Milestone</title>
+<meta name="author" content="Team Milestone">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  @page { size: 13.333in 7.5in; margin: 0; }
+  :root { --bg: #07090d; --ink: #eef1f5; --muted: #9aa5b7; --line: rgba(255,255,255,.1); --signal: #ff6a2b; --signal2: #ffb08a; --ice: #8fd3ff; --ok: #45c79a; --B: #f3b941; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font: 15pt/1.45 "IBM Plex Sans", sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { width: 13.333in; height: 7.5in; position: relative; overflow: hidden; page-break-after: always; break-after: page; padding: .55in .65in .5in;
+    background: radial-gradient(900px 500px at 92% -10%, rgba(255,106,43,.13), transparent 60%), var(--bg); display: flex; flex-direction: column; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
+  .kicker { font: 500 10pt "IBM Plex Mono", monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--signal2); margin: 0 0 8pt; }
+  h1 { font: 600 44pt/1.04 Fraunces, Georgia, serif; letter-spacing: -.02em; margin: 0 0 14pt; }
+  h1 em, h2 em { font-style: italic; color: var(--signal); }
+  h2 { font: 600 30pt/1.08 Fraunces, Georgia, serif; letter-spacing: -.015em; margin: 0 0 12pt; }
+  p { margin: 0 0 9pt; color: #d3d9e3; }
+  .muted { color: var(--muted); }
+  .grid { display: grid; gap: .32in; flex: 1; min-height: 0; }
+  .g-55 { grid-template-columns: 1fr 1.25fr; }
+  .g-46 { grid-template-columns: .9fr 1.4fr; }
+  .shot { border-radius: 14pt; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 18pt 40pt rgba(0,0,0,.55); background: #000; align-self: start; }
+  .shot img { display: block; width: 100%; }
+  .cap { font: 9pt "IBM Plex Mono", monospace; color: var(--muted); margin-top: 6pt; }
+  ul { margin: 4pt 0 0; padding-left: 16pt; color: #d3d9e3; }
+  li { margin: 0 0 6pt; }
+  b, strong { color: var(--ink); }
+  .num { font: 600 30pt/1 Fraunces, serif; color: var(--ink); }
+  .stat { border: 1px solid var(--line); border-radius: 14pt; padding: 12pt 14pt; background: linear-gradient(150deg,#1a1f29,#12161e); }
+  .stat small { display: block; color: var(--muted); font-size: 10.5pt; margin-top: 4pt; }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10pt; margin-top: 10pt; }
+  .tag { display: inline-block; font: 600 9pt "IBM Plex Mono", monospace; padding: 2pt 7pt; border-radius: 6pt; background: rgba(243,185,65,.15); color: var(--B); }
+  .lvl { display: inline-grid; place-items: center; width: 17pt; height: 17pt; border-radius: 6pt; font: 700 9.5pt "IBM Plex Mono", monospace; color: #0b0f16; vertical-align: 1pt; }
+  .A { background: var(--ok); } .B { background: var(--B); } .C { background: #8a95a8; }
+  .foot { position: absolute; left: .65in; right: .65in; bottom: .22in; display: flex; justify-content: space-between; font: 8.5pt "IBM Plex Mono", monospace; color: #6f7a8c; }
+  .title-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: .4in; flex: 1; align-items: center; }
+  .team { margin-top: 18pt; padding-top: 14pt; border-top: 1px solid var(--line); }
+  .team .names { font-size: 13.5pt; color: var(--ink); line-height: 1.6; }
+  .links { font: 10.5pt "IBM Plex Mono", monospace; color: var(--ice); margin-top: 12pt; line-height: 1.7; }
+  .big-q { font: 400 italic 17pt/1.4 Fraunces, serif; color: var(--signal2); margin: 4pt 0 14pt; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+  .card { border: 1px solid var(--line); border-radius: 14pt; padding: 12pt 14pt; background: linear-gradient(150deg,#1a1f29,#12161e); }
+  .card h3 { font: 600 14.5pt Fraunces, serif; margin: 0 0 5pt; }
+  .card p { font-size: 12.5pt; margin: 0; }
+  .dense p, .dense li { font-size: 13.5pt; }
+  .dense p.cap { font-size: 9pt; }
+  .dense .stats { margin-top: 6pt; } .dense .stat { padding: 9pt 12pt; } .dense .num { font-size: 26pt; }
+  .bar { height: 12pt; border-radius: 4pt; margin: 4pt 0 2pt; }
+  .ice { background: linear-gradient(90deg,#5fb8ef,#8fd3ff); width: 33.3%; }
+  .reg { background: linear-gradient(90deg,#6b4a37,#a0735a); width: 100%; }
+  .small { font-size: 11.5pt; }
+  .refs { font-size: 9.5pt; color: var(--muted); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Başlık -->
+<section class="slide">
+  <div class="title-grid">
+    <div>
+      <p class="kicker">NASA Space Apps Challenge 2026 · Team Milestone</p>
+      <h1>Lava Pit <em>Atlas</em></h1>
+      <p class="big-q">Could the first base on the Moon or Mars sit inside a lava pit, and which place on Earth lets us rehearse it?</p>
+      <p>Challenge: find locations on Earth that resemble permanent base sites on the Moon and Mars.</p>
+      <div class="team">
+        <p class="kicker" style="margin-bottom:4pt">Team Milestone</p>
+        <div class="names">Talha Küçük · Sedat Has · Masal Kaya<br>Nil Aydın · Beren Akın · Mehmet Yiğit Karabaş</div>
+      </div>
+      <div class="links">Live site: ttk-prens.github.io/lav-cukurlari-atlasi<br>Code: github.com/TTK-prens/lav-cukurlari-atlasi</div>
+    </div>
+    <div class="shot"><img src="img/home.jpg" alt="Lava Pit Atlas home page"></div>
+  </div>
+  <div class="foot"><span>Lava Pit Atlas · Team Milestone</span><span>1 / 7</span></div>
+</section>
+
+<!-- 2 · Problem -->
+<section class="slide dense">
+  <p class="kicker">Why a pit and not the open surface</p>
+  <h2>The surface is a hard place to live. <em>A pit already has a roof.</em></h2>
+  <div class="grid g-46">
+    <div>
+      <p>On the Moon the surface goes above 121 °C in the day and drops to −133 °C at night. There is no air to stop radiation or micrometeorites. Shielding brought from Earth is heavy, and heavy means expensive.</p>
+      <p>Lava pits and skylights are openings into old lava tubes. Inside, the rock itself is the shield. The shaded floor of the Mare Tranquillitatis pit stays near 17 °C.</p>
+      <p>The organizers said they already know the list of analog sites. So we did not make another list. <b>We compare each Moon or Mars pit with Earth lava tubes feature by feature, and we show where they do not match as clearly as where they do.</b></p>
+      <div class="stats">
+        <div class="stat"><span class="num">32</span><small>Moon and Mars pit candidates</small></div>
+        <div class="stat"><span class="num">13</span><small>Earth analog caves</small></div>
+        <div class="stat"><span class="num" style="color:var(--signal)">0</span><small>confirmed caves on Mars so far</small></div>
+      </div>
+    </div>
+    <div><div class="shot"><img src="img/moon.jpg" alt="Mare Tranquillitatis pit on the Moon Trek map"></div>
+      <p class="cap">Mare Tranquillitatis pit on NASA Moon Trek (LRO WAC). Evidence level A: radar shows a conduit under the pit.</p></div>
+  </div>
+  <div class="foot"><span>Sources: NASA "Weather on the Moon"; Horvath et al. 2022 (Diviner); Carrer et al. 2024 (Mini-RF)</span><span>2 / 7</span></div>
+</section>
+
+<!-- 3 · Atlas -->
+<section class="slide dense">
+  <p class="kicker">What we built · 1</p>
+  <h2>An atlas on <em>NASA's own maps</em></h2>
+  <div class="grid g-55">
+    <div>
+      <ul>
+        <li>NASA Mars Trek and Moon Trek tiles (MOLA, THEMIS, LRO WAC) as the base map.</li>
+        <li>16 Mars candidates (HiRISE, THEMIS) and 16 lunar mare pits that we read one by one from the LROC Pits Atlas.</li>
+        <li>Every candidate has an evidence letter. <span class="lvl A">A</span> radar or gravity shows a void. <span class="lvl B">B</span> imaging or thermal data points to one. <span class="lvl C">C</span> shape only, so we do not count it as a base site.</li>
+        <li>A lava tube evidence layer (radar under Mare Tranquillitatis, SELENE radar and GRAIL gravity at Marius Hills, HiRISE at Pavonis and Olympus Mons).</li>
+        <li>The USGS Mars Global Cave Candidate Catalog: 1,062 candidates, labelled honestly as "mostly false positives".</li>
+        <li>Every number links to its source. If a value is unknown, the cell says "no data".</li>
+      </ul>
+    </div>
+    <div><div class="shot"><img src="img/atlas.jpg" alt="Atlas view of Arsia Mons candidates"></div>
+      <p class="cap">Arsia Mons, Mars: the seven THEMIS skylight candidates, MGC3 points and a tube evidence marker.</p></div>
+  </div>
+  <div class="foot"><span>Data: NASA Trek · LROC (ASU) · HiRISE · THEMIS · USGS/PDS MGC3 (Cushing 2017)</span><span>3 / 7</span></div>
+</section>
+
+<!-- 4 · Dünya ikizi -->
+<section class="slide">
+  <p class="kicker">What we built · 2</p>
+  <h2>Earth twins, <em>feature by feature</em></h2>
+  <div class="grid g-46">
+    <div>
+      <p>For each pit we score Earth caves on four things: depth-to-diameter ratio, overhang, open skylight and thermal buffering. Missing data is skipped, not guessed. Instead the score gets a confidence band, so a twin with one shared feature can never look as good as one with four.</p>
+      <p><b>Size is not in the score.</b> Lunar tubes may be 300 to 700 times larger than the ones on Earth, Martian tubes up to 80 times. We say that on every comparison.</p>
+      <p>Each twin also tells you what it is good for as a test site, for example LiDAR and radio tests in Lanzarote, where ESA already trains astronauts.</p>
+    </div>
+    <div><div class="shot"><img src="img/compare.jpg" alt="Compare view: Dena and its Earth twin"></div>
+      <p class="cap">Dena (Arsia Mons) vs. Raufarhólshellir, Iceland: what matches, what is unknown, band 45–100%.</p></div>
+  </div>
+  <div class="foot"><span>Scale: Sauro et al. 2020 via Losarcos & Dombard 2025 (Space Sci. Rev.)</span><span>4 / 7</span></div>
+</section>
+
+<!-- 5 · Nereye kurmalı -->
+<section class="slide">
+  <p class="kicker">Where to build</p>
+  <h2>Two places stood out <em>in our data</em></h2>
+  <div class="grid g-55">
+    <div>
+      <div class="card" style="margin-bottom:10pt"><h3><span class="lvl A">A</span> Moon: Mare Tranquillitatis pit</h3>
+        <p>Radar points to a conduit under it, it has 10–15 m overhangs, it is 105 m deep, and the shaded floor sits near 17 °C.</p></div>
+      <div class="card" style="margin-bottom:10pt"><h3><span class="lvl B">B</span> Mars: Elysium west-flank candidate</h3>
+        <p>It has an overhanging rim, it stays warmer than its neighbours at night, it is about 122 m deep, and it lies roughly <b>384 km</b> from mapped ground ice. The Arsia candidates are about 2,400 km away.</p></div>
+      <p class="small muted">Ranking rule: evidence level first, then a cost index that counts missing values as zero. A pit with little data cannot jump ahead of a well-measured one. The ice distance is a rough estimate from the 35°N SWIM reference.</p>
+    </div>
+    <div><div class="shot"><img src="img/rank.jpg" alt="Base ranking for the Moon and Mars"></div></div>
+  </div>
+  <div class="foot"><span>Sources: LROC Pits Atlas; Sharma et al. 2025 (AJ); NASA SWIM</span><span>5 / 7</span></div>
+</section>
+
+<!-- 6 · Maliyet + oyun -->
+<section class="slide">
+  <p class="kicker">Cutting the cost</p>
+  <h2>Launch less. <em>Use what is already there.</em></h2>
+  <div class="grid g-46">
+    <div>
+      <p class="small">Water ice vs. regolith thickness for the same 50 mSv/year limit:</p>
+      <div class="small">Ice · 325 mm</div><div class="bar ice"></div>
+      <div class="small">Regolith · 975 mm</div><div class="bar reg"></div>
+      <ul class="small" style="margin-top:10pt">
+        <li>Each kg saved on the Mars surface saves 10.5–17 kg in low Earth orbit. For propellant made locally the figure is 7.4–11.3 kg (NASA NTRS).</li>
+        <li>ESA printed a 1.5-tonne block from simulated lunar soil. That is a surface method, and it works alongside a pit base.</li>
+        <li>A stable pit floor needs less heating and cooling, so it needs less power.</li>
+      </ul>
+      <p class="small"><b>Cave Base Mission</b> is a small game built on the same data. You run 10 weeks at a real candidate, and rehearsing at its Earth twin lowers risk. It is a game model and we label it that way.</p>
+    </div>
+    <div><div class="shot"><img src="img/game.jpg" alt="Cave Base Mission game"></div>
+      <p class="cap">Cave Base Mission at the Elysium candidate: habitat inside the pit, ice shield built.</p></div>
+  </div>
+  <div class="foot"><span>Sources: in-situ ice shielding study (Jezero); NTRS 20160006324, 20180002086; ESA 3D printing (2013)</span><span>6 / 7</span></div>
+</section>
+
+<!-- 7 · Gelecek -->
+<section class="slide">
+  <p class="kicker">What comes next</p>
+  <h2>From a map to <em>a field test</em></h2>
+  <div class="two" style="flex:1">
+    <div>
+      <div class="card" style="margin-bottom:10pt"><h3>What we would do with more time</h3>
+        <p>Measure the skylights of Earth tubes with LiDAR. Their depths are the biggest gap in our data, and that gap is why most matches are only medium confidence. After that we would add the SWIM ice map as a layer and run a small rehearsal at an analog tube.</p></div>
+      <div class="card"><h3>What we do not claim</h3>
+        <p>No cave on Mars is confirmed yet. Every Mars site here is a candidate. We never invent a value: if a source is missing or two sources disagree, the site says so.</p></div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:10pt"><h3>Try it</h3>
+        <p class="links" style="margin:0">ttk-prens.github.io/lav-cukurlari-atlasi<br>github.com/TTK-prens/lav-cukurlari-atlasi</p>
+        <p class="small" style="margin-top:6pt">Turkish and English · works on phones · a 60-second tour button on the home page.</p></div>
+      <div class="card"><h3>Data and tools</h3>
+        <p class="refs">NASA Moon/Mars Trek, LRO (LROC, Diviner, Mini-RF), MRO HiRISE, Mars Odyssey THEMIS, NASA SWIM, USGS Astrogeology MGC3 (PDS), GRAIL; ESA; USGS HVO; NPS; Wikimedia Commons photos (credited on the site). Built with Vite, TypeScript, Leaflet and Python. AI coding assistant: Claude (Anthropic).</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>Team Milestone · Talha Küçük · Sedat Has · Masal Kaya · Nil Aydın · Beren Akın · Mehmet Yiğit Karabaş</span><span>7 / 7</span></div>
+</section>
+
+</body>
+</html>

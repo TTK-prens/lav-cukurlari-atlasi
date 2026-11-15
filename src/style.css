@@ -131,6 +131,14 @@ small, .small { font-size: 12.5px; color: var(--muted); }
 .find.accent { background: linear-gradient(150deg, #2a1a12 0%, #17120f 100%); }
 .kpi { font: 600 44px/1 var(--serif) !important; color: var(--ice); margin: 8px 0 !important; }
 .note { padding: 22px; } .note p, .note li { color: #c3cbd8; font-size: 14px; } .note ul { padding-left: 18px; margin: 8px 0 0; }
+.present { display: grid; grid-template-columns: 1.5fr 1fr; gap: 18px; align-items: stretch; }
+.vid { margin: 0; padding: 10px; overflow: hidden; }
+.vid video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; background: #000; }
+.vid figcaption { padding: 8px 4px 0; font: 500 11px var(--mono); color: var(--muted); }
+.deck { padding: 22px; display: flex; flex-direction: column; gap: 6px; }
+.deck h3 { font: 600 20px var(--serif); }
+.deck p { color: #c3cbd8; margin: 0; }
+@media (max-width: 900px) { .present { grid-template-columns: 1fr; } }
 .foot { width: min(1200px, 100%); margin: 56px auto 0; padding: 28px 24px 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
 
 /* ---------- atlas ---------- */

@@ -1,6 +1,9 @@
 # Ay ve Mars Lav Çukurları Atlası / Lunar & Martian Lava Pit Atlas
 
 **Canlı site / Live:** https://ttk-prens.github.io/lav-cukurlari-atlasi/  
+**Demo videosu (28,9 sn):** https://ttk-prens.github.io/lav-cukurlari-atlasi/Milestone_LavaPitAtlas_demo.mp4  
+**Sunum (PDF, 7 sayfa):** https://ttk-prens.github.io/lav-cukurlari-atlasi/Milestone_LavaPitAtlas_slides.pdf  
+**Takım Milestone:** Talha Küçük, Sedat Has, Masal Kaya, Nil Aydın, Beren Akın, Mehmet Yiğit Karabaş  
 **30 sn video modu:** https://ttk-prens.github.io/lav-cukurlari-atlasi/?video=1&lang=en&team=YourTeam#/home
 
 NASA Space Apps Challenge 2026 (14–15 Kasım). Ay ve Mars'taki lav çukuru / skylight adaylarını
