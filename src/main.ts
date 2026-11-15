@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css';
 import './style.css';
 import raw from '../data/eslesme.json';
 import layersRaw from '../data/katmanlar.json';
+import imagesRaw from '../data/gorseller.json';
 import type { Candidate, Earth, MatchDoc, Source } from './types';
 import { compare, costIndex, rankSites, COST_KEYS, FEATURE_KEYS, type CostKey, type FeatureKey, type Features } from './match';
 import { getLang, setLang, t, type Key } from './i18n';
@@ -79,10 +80,28 @@ function depthText(c: Candidate) {
   return `${c.ozellikler.derinlik_tipi === 'en_az' ? t('atLeast') : ''}${d} m`;
 }
 
+// ---------------------------------------------------------------- görseller (lisanslı, atıflı)
+interface Img { file: string; credit: string; license: string; license_url: string | null; source: string; source_url: string; desc: string; panel?: string; shared?: boolean }
+const IMG = imagesRaw as unknown as Record<string, Img>;
+
+function figure(id: string, alt: string, kind: 'photo' | 'sci') {
+  const im = IMG[id];
+  if (!im) return kind === 'photo' ? `<div class="eimg"><div class="ph">${esc(t('imgMissing'))}</div></div>` : '';
+  const lic = im.license_url ? `<a href="${esc(im.license_url)}" target="_blank" rel="noopener">${esc(im.license)}</a>` : esc(im.license);
+  const panel = im.panel
+    ? `<b>${Lx(`Bu aday: panel ${im.panel.replace('-1', ' (1, sol)').replace('-2', ' (2)')}`, `This candidate: panel ${im.panel.replace('-1', ' (1, left)').replace('-2', ' (2)')}`)}</b> · ${Lx('THEMIS görünür ışık; Arsia Mons\'un 7 skylight adayı', 'THEMIS visible light; the 7 Arsia Mons skylight candidates')} · `
+    : '';
+  return `<figure class="fig ${kind}">
+    <a href="img/${esc(im.file)}" target="_blank" rel="noopener"><img src="img/${esc(im.file)}" alt="${esc(alt)}" loading="lazy"></a>
+    <figcaption>${panel}${Lx('Görsel', 'Image')}: ${esc(im.credit)} · ${lic} · <a href="${esc(im.source_url)}" target="_blank" rel="noopener">${esc(im.source)}</a></figcaption>
+  </figure>`;
+}
+
 function featureCard(c: Candidate) {
   const o = c.ozellikler;
   const dd = o.dD === null ? `<span class="nd">${t('noData')}</span>` : `${o.derinlik_tipi === 'en_az' ? '≥' : ''}${o.dD.toFixed(2)}`;
   return `
+  ${figure(c.aday_id, nm(c), 'sci')}
   <dl class="fcard">
     <dt>${t('level')}</dt><dd>${levelBadge(c.kanit_seviyesi)} ${c.govde === 'mars' ? `<small class="warn">${t('marsNote')}</small>` : ''}</dd>
     ${c.sinif === 'karst' ? `<dt>⚠</dt><dd class="warn"><b>${t('karst')}</b></dd>` : ''}
@@ -103,7 +122,7 @@ function earthCard(e0: Earth) {
   const nd = `<span class="nd">${t('noData')}</span>`;
   const conf = e.sicaklik_guven && /dusuk/.test(e.sicaklik_guven) ? ` <em class="warn">(${t('conf')}: ${esc(e.sicaklik_guven)})</em>` : '';
   return `
-  <div class="eimg"><img src="img/${esc(e.gorsel || 'x.jpg')}" alt="${esc(e.ad)}" onerror="this.parentElement.innerHTML='<div class=ph>${esc(t('imgMissing'))}</div>'"></div>
+  ${figure(e0.dunya_id, e.ad, 'photo')}
   <dl class="fcard">
     <dt>${t('location')}</dt><dd>${e.enlem !== null ? `${e.enlem.toFixed(3)}, ${e.boylam!.toFixed(3)} <small>(${esc(e.konum_kaynak)})</small>` : `<span class="nd">${t('noLocation')}</span>`}</dd>
     <dt>${t('length')}</dt><dd>${e.uzunluk ? esc(e.uzunluk) : nd}</dd>

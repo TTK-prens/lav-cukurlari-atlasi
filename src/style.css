@@ -210,6 +210,13 @@ input[type=range] { accent-color: var(--signal); }
 .expl p { margin: 8px 0; color: #c9d1dd; }
 .cmp-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; } .cmp-bottom .cards { margin-top: 14px; }
 .eimg { height: 130px; border-radius: 16px; overflow: hidden; background: rgba(255, 255, 255, .03); margin: 8px 0; } .eimg img { width: 100%; height: 100%; object-fit: cover; }
+.fig { margin: 10px 0; border-radius: 16px; overflow: hidden; background: #000; border: 1px solid var(--line); }
+.fig a { display: block; }
+.fig img { display: block; width: 100%; height: 190px; object-fit: cover; transition: transform .3s ease; }
+.fig.sci img { object-fit: contain; background: #000; height: 200px; }
+.fig a:hover img { transform: scale(1.02); }
+.fig figcaption { padding: 7px 10px; font-size: 11px; line-height: 1.45; color: var(--muted); background: rgba(11, 15, 22, .95); overflow-wrap: anywhere; }
+.fig figcaption a { color: var(--ice); }
 .ph { height: 100%; display: grid; place-items: center; color: var(--muted); font: 500 11.5px var(--mono); border: 1px dashed rgba(255, 255, 255, .14); border-radius: 16px; }
 .cross { max-width: 960px; margin: 0 auto; } .cross label { display: inline-flex; flex-direction: column; gap: 4px; margin: 0 14px 12px 0; color: var(--muted); font-size: 12.5px; }
 .doc { max-width: 920px; margin: 0 auto; } .doc h2 { font: 600 32px var(--serif); } .doc h3 { font: 600 19px var(--serif); margin-top: 26px; }

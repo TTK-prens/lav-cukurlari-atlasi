@@ -124,3 +124,20 @@ describe('harita katmanları', () => {
     for (const t of L.tupler) for (const k of t.kaynak) expect(ids.has(k)).toBe(true);
   });
 });
+
+import images from '../data/gorseller.json';
+import { existsSync } from 'node:fs';
+describe('görseller', () => {
+  const I = images as unknown as Record<string, { file: string; credit: string; license: string; source_url: string }>;
+  it('her görselin dosyası, atfı, lisansı ve kaynak linki var', () => {
+    for (const [id, im] of Object.entries(I)) {
+      expect(existsSync(`public/img/${im.file}`), id).toBe(true);
+      expect(im.credit.length, id).toBeGreaterThan(2);
+      expect(im.license.length, id).toBeGreaterThan(2);
+      expect(im.source_url, id).toMatch(/^https:\/\//);
+    }
+  });
+  it('13 Dünya kaydının hepsinin görseli var', () => {
+    for (const d of doc.dunya) expect(I[d.dunya_id], d.dunya_id).toBeTruthy();
+  });
+});

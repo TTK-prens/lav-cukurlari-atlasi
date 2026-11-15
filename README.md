@@ -68,6 +68,10 @@ Atlas, Karşılaştır, Sıralama ve Maliyet sayfalarının üstünde "1 → 4" 
 - Ana sayfadaki **▶ 60 sn jüri turu** düğmesi ya da `?tour=1`: 8 sahnelik otomatik tur (atlas → karşılaştır → Ay↔Mars → sıralama → maliyet → oyun).
 - `?video=1&lang=en&team=TakimAdi`: Space Apps 2026 video şablonuna (≤30 sn, İngilizce altyazı) birebir uyan ~29 sn tur. Ayrıntı: `docs/VIDEO.md`, altyazı `docs/demo_video_en.srt`, slayt alternatifi `docs/SLIDES.md`.
 
+## Görseller
+
+13 Dünya mağarasının hepsi, 4 Ay çukuru ve 14 Mars adayı için lisansı açık gerçek görüntüler var: Wikimedia Commons (CC/kamu malı), NASA LROC, THEMIS ve HiRISE (kamu malı). Her görselin altında çeken, lisans ve kaynak linki görünür. Arsia'nın 7 skylight adayı NASA'nın tek etiketli görüntüsünü paylaşır; kartta adayın panel harfi yazar (A Dena … F Jeanne; Abby ve Nikki aynı E panelinde 1 ve 2). Görsel olmayan adaylarda yer tutucu gösterilmez. İndirme: `python scripts/fetch_images.py` (Pillow gerekir).
+
 ## Kullanılan araçlar (Space Apps "References" bölümü için)
 
 Vite, TypeScript, Leaflet, Vitest, Python; harita döşemeleri NASA Solar System Treks ve OpenStreetMap; geliştirme sırasında Anthropic Claude (kod ve araştırma yardımı). Videoda başka bir yapay zekâ aracı (ör. Gemini) kullanırsanız buraya ekleyin. NASA logosu kullanılmamıştır (marka kuralları sayfası bu oturumda okunamadı; yapay zekâ için açık bir kural bulunamadı, yalnız tüm araçların listelenmesi isteniyor).
@@ -142,5 +146,4 @@ Google Sheet sekmeleri ─(CSV export)─► data/ay_adaylari.csv
 - Takım notlarından gelen değerler (Undara, Cueva del Viento, Manjanggul, İzlanda tüpleri, Lanzarote, NTRS oranları, buz kalkanı 325/975 mm, ESA 3D baskı) `TAKIM-NOTU` olarak işaretli; birincil kaynakla tek tek doğrulanmalı. Lanzarote sıcaklığı yalnız turizm kaynaklı (düşük güven).
 - Mars aday adları, çap tanımları ve termal notlar İngilizce de var (`*_en` sütunları). Dünya satırlarının uzunluk/boyut/sıcaklık metinleri ve serbest notlar yalnız Türkçe; EN modunda "Note (TR)" etiketiyle gösterilir.
 - Arsia adayları ve Mare Tranquillitatis çukuru aynı en iyi ikizi (Raufarhólshellir) paylaşıyor, çünkü Dünya tarafında d/D ve sarkık duvar verisi yok. Uygulama bu eşitliği ekranda açıkça yazıyor.
-- `public/img/` boş; görseller eklenene kadar yer tutucu görünür.
 - Ay için yüksek çözünürlüklü (NAC) taban katman eklenmedi; LRO WAC ~zoom 8'den sonra büyütülür.
