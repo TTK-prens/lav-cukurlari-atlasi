@@ -1,5 +1,8 @@
 # Ay ve Mars Lav Çukurları Atlası / Lunar & Martian Lava Pit Atlas
 
+**Canlı site / Live:** https://ttk-prens.github.io/lav-cukurlari-atlasi/  
+**30 sn video modu:** https://ttk-prens.github.io/lav-cukurlari-atlasi/?video=1&lang=en&team=YourTeam#/home
+
 NASA Space Apps Challenge 2026 (14–15 Kasım). Ay ve Mars'taki lav çukuru / skylight adaylarını
 Dünya'daki lav tüpleriyle **özellik özellik** eşleştiren, NASA Trek haritaları üzerinde çalışan statik web uygulaması.
 

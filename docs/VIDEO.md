@@ -9,7 +9,13 @@ Resmi akış: 0:00 takım → 0:02 challenge → 0:05 proje adı ve slogan → 0
 npm run dev
 ```
 
-Tarayıcıda şu adresi aç (`TakimAdi` yerine takımınızın adını yazın, boşluk yerine `%20`):
+Canlı sitede doğrudan (sunucu gerekmez):
+
+```
+https://ttk-prens.github.io/lav-cukurlari-atlasi/?video=1&lang=en&team=TakimAdi#/home
+```
+
+Ya da yerelde, tarayıcıda şu adresi aç (`TakimAdi` yerine takımınızın adını yazın, boşluk yerine `%20`):
 
 ```
 http://localhost:5173/?video=1&lang=en&team=TakimAdi#/home
