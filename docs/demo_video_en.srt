@@ -1,31 +1,31 @@
 1
-00:00:00,000 --> 00:00:01,960
-Hi, we are team [Team name].
+00:00:00,100 --> 00:00:01,932
+Hi, we are team Milestone.
 
 2
-00:00:01,960 --> 00:00:05,040
-Our challenge: find places on Earth that resemble permanent base sites on the Moon and Mars.
+00:00:01,932 --> 00:00:05,793
+Our challenge: find places on Earth that resemble base sites on the Moon and Mars.
 
 3
-00:00:05,040 --> 00:00:09,530
+00:00:05,793 --> 00:00:09,075
 Lava Pit Atlas: the first base could be built inside a lava pit.
 
 4
-00:00:09,530 --> 00:00:13,000
-We map 32 lunar and martian pit candidates with NASA Trek, LROC, HiRISE and THEMIS data…
+00:00:09,075 --> 00:00:14,195
+We map 32 candidate pits on the Moon and Mars with NASA Trek, LROC and HiRISE data,
 
 5
-00:00:13,000 --> 00:00:16,580
-…and match each to Earth lava tubes feature by feature: what matches, and what does not.
+00:00:14,195 --> 00:00:17,028
+and match each to Earth lava tubes, feature by feature.
 
 6
-00:00:16,580 --> 00:00:19,510
-Best Mars candidate: Elysium west flank, ~384 km from mapped ice (rough).
+00:00:17,028 --> 00:00:21,644
+Best Mars candidate: Elysium, about 384 km from mapped ice.
 
 7
-00:00:19,510 --> 00:00:24,110
-Next: rehearse at Earth twins, build with local ice and regolith, and launch less from Earth.
+00:00:21,644 --> 00:00:25,047
+Next: rehearse on Earth, then build with local ice and regolith.
 
 8
-00:00:24,110 --> 00:00:28,170
-Every number is sourced. No Mars cave is confirmed — yet.
+00:00:25,047 --> 00:00:28,800
+Every number is sourced. No Mars cave is confirmed yet.

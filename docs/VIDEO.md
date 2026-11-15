@@ -1,5 +1,9 @@
 # 30 saniyelik demo videosu
 
+**Hazır video:** `video/Milestone_LavaPitAtlas_demo.mp4`. Süre 28,9 sn; 1920×1080; İngilizce anlatım ekranda altyazı olarak da görünür; dosyada ayrıca açılıp kapatılabilen İngilizce altyazı izi var. Bu dosya depoya konmadı, doğrudan YouTube'a (herkese açık veya liste dışı) yükleyin. Altyazı dosyası: `docs/demo_video_en.srt`. Videoyu yeniden üretmek için: `scripts/video/README.md`.
+
+**Clipchamp ile iyileştirme (isteğe bağlı):** MP4'ü Microsoft Clipchamp'e (Windows'ta ücretsiz) aktarın. Daha doğal bir ses için "Metin okuma" (text to speech) ile `docs/demo_video_en.srt` dosyasındaki cümleleri seslendirip mevcut ses izinin yerine koyabilir, hafif bir fon müziği ekleyebilirsiniz. **Toplam süre 30 saniyeyi geçmemeli.**
+
 Space Apps 2026 kuralı: demo **en fazla 30 saniye** bir video (İngilizce altyazılı) **veya** en fazla 7 slayt. Video YouTube veya Google Drive'a yüklenir ve bağlantı herkese açık olmalıdır. Gönderimden sonra düzenleme yapılamaz.
 Resmi akış: 0:00 takım → 0:02 challenge → 0:05 proje adı ve slogan → 0:10 nasıl çalışıyor ve NASA verisi → 0:20–0:30 gelecek.
 

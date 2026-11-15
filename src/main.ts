@@ -985,19 +985,21 @@ function tourScenes(): Scene[] {
  *  (0:00 takım · 0:02 challenge · 0:05 proje adı · 0:10 nasıl çalışır + NASA verisi · 0:20–0:30 gelecek).
  *  Altyazı = sahne metni (EN için ?lang=en). Kayıt: ?video=1&lang=en&team=TakımAdı */
 function videoScenes(team: string): Scene[] {
+  // Süreler, okunan sesin (Windows Zira, hız 2) sessizlik kırpılmış uzunluğuna göre ayarlandı; toplam ≈ 28,3 sn.
+  // Altyazı metni = seslendirme metni (docs/demo_video_en.srt ile aynı).
   return [
-    { ms: 2000, tr: `Merhaba, biz ${team} takımıyız.`, en: `Hi, we are team ${team}.`, run: () => go('#/home') },
-    { ms: 3000, tr: 'Challenge: Ay ve Mars\'taki kalıcı üs yerlerine benzeyen Dünya yerlerini bulmak.', en: 'Our challenge: find places on Earth that resemble permanent base sites on the Moon and Mars.', run: () => {} },
-    { ms: 4500, tr: 'Lav Çukurları Atlası: ilk üs bir lav çukurunun içinde kurulabilir.', en: 'Lava Pit Atlas: the first base could be built inside a lava pit.', run: () => {} },
-    { ms: 3500, tr: '32 Ay ve Mars çukur adayını NASA Trek, LROC, HiRISE ve THEMIS verisiyle haritalıyoruz…', en: 'We map 32 lunar and martian pit candidates with NASA Trek, LROC, HiRISE and THEMIS data…', run: () => { go('#/atlas'); setTimeout(() => { mainMap.invalidateSize(); select('MARS-01'); }, 250); } },
-    { ms: 3500, tr: '…ve her birini Dünya lav tüpleriyle özellik özellik eşleştiriyoruz: neyin benzediğini ve neyin benzemediğini.', en: '…and match each to Earth lava tubes feature by feature: what matches, and what does not.', run: () => go('#/karsilastir') },
-    { ms: 3000, tr: 'Mars\'ta en iyi aday: Elysium batı yanağı, haritalanmış buza ~384 km (kaba).', en: 'Best Mars candidate: Elysium west flank, ~384 km from mapped ice (rough).', run: () => go('#/siralama') },
-    { ms: 4600, tr: 'Sırada: Dünya ikizlerinde prova, yerel buz ve regolitle inşa, Dünya\'dan daha az fırlatma.', en: 'Next: rehearse at Earth twins, build with local ice and regolith, and launch less from Earth.', run: async () => {
+    { ms: 1800, tr: `Merhaba, biz ${team} takımıyız.`, en: `Hi, we are team ${team}.`, run: () => go('#/home') },
+    { ms: 3800, tr: 'Challenge: Ay ve Mars\'taki üs yerlerine benzeyen Dünya yerlerini bulmak.', en: 'Our challenge: find places on Earth that resemble base sites on the Moon and Mars.', run: () => {} },
+    { ms: 3200, tr: 'Lav Çukurları Atlası: ilk üs bir lav çukurunun içinde kurulabilir.', en: 'Lava Pit Atlas: the first base could be built inside a lava pit.', run: () => {} },
+    { ms: 5050, tr: 'Ay ve Mars\'taki 32 aday çukuru NASA Trek, LROC ve HiRISE verisiyle haritalıyoruz,', en: 'We map 32 candidate pits on the Moon and Mars with NASA Trek, LROC and HiRISE data,', run: () => { go('#/atlas'); setTimeout(() => { mainMap.invalidateSize(); select('MARS-01'); }, 250); } },
+    { ms: 2800, tr: 've her birini Dünya lav tüpleriyle özellik özellik eşleştiriyoruz.', en: 'and match each to Earth lava tubes, feature by feature.', run: () => go('#/karsilastir') },
+    { ms: 4550, tr: 'Mars\'ta en iyi aday: Elysium, haritalanmış buza yaklaşık 384 km.', en: 'Best Mars candidate: Elysium, about 384 km from mapped ice.', run: () => go('#/siralama') },
+    { ms: 3350, tr: 'Sırada: Dünya\'da prova, sonra yerel buz ve regolitle inşa.', en: 'Next: rehearse on Earth, then build with local ice and regolith.', run: async () => {
       startGame('MARS-12', 2026);
-      await wait(300);
+      await wait(250);
       for (let i = 0; i < 6 && game && !game.done && tourOn; i++) { game = G.play(game, G.sensiblePolicy(game)); renderGame(); await wait(420); }
     } },
-    { ms: 4000, tr: 'Her sayının kaynağı var. Mars\'ta henüz doğrulanmış mağara yok, şimdilik.', en: 'Every number is sourced. No Mars cave is confirmed — yet.', run: () => go('#/home') },
+    { ms: 3700, tr: 'Her sayının kaynağı var. Mars\'ta henüz doğrulanmış mağara yok.', en: 'Every number is sourced. No Mars cave is confirmed yet.', run: () => go('#/home') },
   ];
 }
 
