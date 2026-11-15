@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.sch" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+
+<Product_Observational xmlns="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:pds="http://pds.nasa.gov/pds4/pds/v1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pds.nasa.gov/pds4/pds/v1 https://pds.nasa.gov/pds4/pds/v1/PDS4_PDS_1D00.xsd">
+    <Identification_Area>
+        <logical_identifier>urn:nasa:pds:mars_mro.odyssey_multi_cavecatalog_cushing_2016:data:mars_cave_catalog</logical_identifier>
+        <version_id>1.0</version_id>
+        <title>Mars Global Cave Candidate Catalog</title>
+        <information_model_version>1.13.0.0</information_model_version>
+        <product_class>Product_Observational</product_class>
+    </Identification_Area>
+    <Observation_Area>
+        <comment>
+            Location, confidence rating and type classification of candidate cave entrances observed by the MRO CTX camera.
+        </comment>
+        <Time_Coordinates>
+              <start_date_time nilReason="unknown" xsi:nil="true"></start_date_time>
+              <stop_date_time nilReason="unknown" xsi:nil="true"></stop_date_time>
+        </Time_Coordinates>
+        <Primary_Result_Summary>
+        <purpose>Science</purpose>
+            <processing_level>Derived</processing_level>
+            <description>
+                A table of candidate cave-entrance loacations            
+            </description>
+        </Primary_Result_Summary>
+        <Investigation_Area>
+            <name>Mars Reconnaissance Orbiter</name>
+            <type>Mission</type>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:investigation:mission.mars_reconnaissance_orbiter::1.0</lidvid_reference>
+                <reference_type>data_to_investigation</reference_type>
+            </Internal_Reference>
+        </Investigation_Area>
+        <Observing_System>
+            <name>Observing system for CTX and HiRISE data</name>
+            <Observing_System_Component>
+                <name>Mars Reconaissance Orbiter</name>
+                <type>Spacecraft</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.mro</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>Mars Reconnaissance Orbiter Context Camera</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:ctx.mro</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>Mars Reconnaissance Orbiter HiRISE Camera</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:hirise.mro</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+        <Observing_System>
+            <name>Observing system for THEMIS data</name>
+            <Observing_System_Component>
+                <name>Mars Odyssey</name>
+                <type>Spacecraft</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.ody</lid_reference>
+                    <reference_type>is_instrument_host</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+            <Observing_System_Component>
+                <name>Mars Odyssey Thermal Emission Imaging System (THEMIS VIS)</name>
+                <type>Instrument</type>
+                <Internal_Reference>
+                    <lid_reference>urn:nasa:pds:context:instrument:themis.ody</lid_reference>
+                    <reference_type>is_instrument</reference_type>
+                </Internal_Reference>
+            </Observing_System_Component>
+        </Observing_System>
+        <Target_Identification>
+            <name>Mars</name>
+            <type>Planet</type>
+            <Internal_Reference>
+                <lidvid_reference>urn:nasa:pds:context:target:planet.mars::1.0</lidvid_reference>
+                <reference_type>data_to_target</reference_type>
+            </Internal_Reference>
+        </Target_Identification>
+    </Observation_Area>
+    <Reference_List>
+        <Internal_Reference>
+            <lidvid_reference>urn:nasa:pds:context:investigation:mission.mars_reconnaissance_orbiter::1.0</lidvid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.mro</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:instrument:ctx.mro</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:instrument:hirise.mro</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lidvid_reference>urn:nasa:pds:context:investigation:mission.2001_mars_odyssey::1.0</lidvid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:instrument_host:spacecraft.ody</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:instrument:themis.ody</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:target:planet.mars</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+        <Internal_Reference>
+            <lid_reference>urn:nasa:pds:context:node:node.imaging</lid_reference>
+            <reference_type>data_to_associate</reference_type>
+        </Internal_Reference>
+    </Reference_List>
+    <File_Area_Observational>
+        <File>
+            <file_name>Mars_Cave_Catalog.csv</file_name>
+            <local_identifier>MGC3_cave_table_char</local_identifier>
+            <creation_date_time>2016-09-30T12:12:12Z</creation_date_time>
+            <file_size unit="byte">65726</file_size>
+            <records>1063</records>
+            <md5_checksum>5a209786b731b932317ea534432013f0</md5_checksum>
+        </File>
+        <Header>
+            <offset unit="byte">0</offset>
+            <object_length unit="byte">128</object_length>
+            <parsing_standard_id>7-Bit ASCII Text</parsing_standard_id>
+        </Header>
+        <Table_Delimited>
+            <local_identifier>MGC3_cave_table_shapefile</local_identifier>
+            <offset unit="byte">131</offset>
+            <parsing_standard_id>PDS DSV 1</parsing_standard_id>
+            <description>Mars Global Cave Candidate Catalog - CSV format</description>
+            <records>1062</records>
+            <record_delimiter>Carriage-Return Line-Feed</record_delimiter>
+            <field_delimiter>Comma</field_delimiter>
+            <Record_Delimited>
+                <fields>8</fields>
+                <groups>0</groups>
+                <Field_Delimited>
+                    <name>ID_Tag</name>
+                    <field_number>1</field_number>
+                    <data_type>ASCII_String</data_type>
+                    <maximum_field_length unit="byte">6</maximum_field_length>
+                </Field_Delimited>
+                <Field_Delimited>
+                    <name>Longitude</name>
+                    <field_number>2</field_number>
+                    <data_type>ASCII_Real</data_type>
+                    <maximum_field_length unit="byte">9</maximum_field_length>
+                    <unit>DEGREE</unit>
+                </Field_Delimited>
+                <Field_Delimited>
+                    <name>Latitude</name>
+                    <field_number>3</field_number>
+                    <data_type>ASCII_Real</data_type>
+                    <maximum_field_length unit="byte">9</maximum_field_length>
+                    <unit>DEGREE</unit>
+                </Field_Delimited>
+                <Field_Delimited>
+                    <name>Type_Code</name>
+                    <field_number>4</field_number>
+                    <data_type>ASCII_String</data_type>
+                    <maximum_field_length unit="byte">3</maximum_field_length>
+                    <unit>Degrees</unit>
+                </Field_Delimited>
+                <Field_Delimited>
+                    <name>Priority</name>
+                    <field_number>5</field_number>
+                    <data_type>ASCII_Integer</data_type>
+                    <maximum_field_length unit="byte">1</maximum_field_length>
+                    <unit>Degrees</unit>
+                </Field_Delimited>
+                <Field_Delimited>
+                    <name>APC_Diameter</name>
+                    <field_number>6</field_number>
+                    <data_type>ASCII_String</data_type>
+                    <maximum_field_length unit="byte">3</maximum_field_length>
+                    <unit>METER</unit>
+                </Field_Delimited><Field_Delimited>
+                    <name>APC_Depth</name>
+                    <field_number>7</field_number>
+                    <data_type>ASCII_String</data_type>
+                    <maximum_field_length unit="byte">3</maximum_field_length>
+                    <unit>METER</unit>
+                </Field_Delimited>
+                <Field_Delimited>
+                    <name>Comment</name>
+                    <field_number>8</field_number>
+                    <data_type>ASCII_String</data_type>
+                    <maximum_field_length unit="byte">70</maximum_field_length>
+                </Field_Delimited>
+            </Record_Delimited>
+        </Table_Delimited>
+    </File_Area_Observational>
+</Product_Observational>

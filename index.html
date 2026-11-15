@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lav Çukurları Atlası</title>
+  <meta name="description" content="Ay ve Mars lav çukuru/skylight adaylarını Dünya lav tüpleriyle özellik özellik eşleştiren atlas (NASA Space Apps 2026)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <a class="skip" href="#content">İçeriğe geç</a>
+  <header class="top glass">
+    <a class="brand" href="#/home" aria-label="Ana sayfa">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+        <path d="M6 24c5-3 9-3 14 0s9 3 14 0" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".45"/>
+        <ellipse cx="20" cy="19" rx="5.5" ry="4" fill="var(--signal)"/>
+        <ellipse cx="20" cy="19" rx="2.6" ry="1.8" fill="#07090d"/>
+      </svg>
+      <span class="brand-txt"><b id="title">Lav Çukurları Atlası</b><small id="subtitle"></small></span>
+    </a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="nav" aria-label="Sayfalar">
+      <a data-view="home" href="#/home"></a>
+      <a data-view="map" href="#/atlas"></a>
+      <a data-view="compare" href="#/karsilastir"></a>
+      <a data-view="rank" href="#/siralama"></a>
+      <a data-view="cost" href="#/maliyet"></a>
+      <a data-view="game" href="#/gorev"></a>
+      <a data-view="cross" href="#/ay-mars"></a>
+      <a data-view="method" href="#/metodoloji"></a>
+      <a data-view="sources" href="#/kaynaklar"></a>
+    </nav>
+    <div class="langseg" role="group" aria-label="Dil / Language">
+      <button data-lang="tr" aria-pressed="true">TR</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </header>
+  <div id="guide" class="guide" hidden></div>
+  <main id="content">
+    <div id="home" hidden></div>
+    <div id="mapview" class="mapview" hidden>
+      <aside id="list" class="list"></aside>
+      <div class="mapwrap">
+        <div id="map" role="application" aria-label="Harita"></div>
+        <div class="maptools glass">
+          <div class="seg" role="group" aria-label="Gövde / Body">
+            <button data-body="mars" aria-pressed="true">Mars</button>
+            <button data-body="ay" aria-pressed="false">Ay</button>
+          </div>
+          <label id="basemap"><span id="basemap-label">Taban harita</span>
+            <select id="basemap-sel"><option value="mola">MOLA</option><option value="themis">THEMIS Day IR 100 m</option></select></label>
+          <div id="overlays" class="overlays"></div>
+        </div>
+      </div>
+      <aside id="detail" class="detail" aria-live="polite"></aside>
+    </div>
+    <div id="compare" class="page" hidden></div>
+    <div id="rank" class="page" hidden></div>
+    <div id="cost" class="page" hidden></div>
+    <div id="game" class="page" hidden></div>
+    <div id="cross" class="page" hidden></div>
+    <div id="method" class="page" hidden></div>
+    <div id="sources" class="page" hidden></div>
+  </main>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
